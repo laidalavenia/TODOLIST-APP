@@ -5,8 +5,12 @@ import TodoItemList from '../components/TodoItemList';
 import SearchTodo from '../components/SearchTodo';
 import { getActiveTodos, searchTodos } from '../utils/local-data';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import store  from '../../src/redux/index';
 
 function HomePageWrapper() {
+  const globalState = useSelector(state => state);
+  console.log('state global: ', globalState);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const title = searchParams.get('title');
@@ -39,7 +43,7 @@ class HomePage extends Component {
     const todos = searchTodos(this.state.todos, this.state.keyword);
     return (
       <section className="homepage">
-        <h2>Search Todo</h2>
+        <h2>Search </h2>
         <SearchTodo onSearch={this.onSearch} />
         <TodoItemList todos={todos} />
         <HomePageAction />

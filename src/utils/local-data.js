@@ -3,42 +3,42 @@ let todos = [
     id: 'todos-1',
     title: 'Babel',
     body: 'Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2023-11-14T04:27:34.572Z',
     archived: false,
   },
   {
     id: 'todos-2',
     title: 'Functional Component',
     body: 'Functional component merupakan React component yang dibuat menggunakan fungsi JavaScript. Agar fungsi JavaScript dapat disebut component ia harus mengembalikan React element dan dipanggil layaknya React component.',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2023-11-14T04:27:34.572Z',
     archived: false,
   },
   {
     id: 'todos-3',
     title: 'Modularization',
     body: 'Dalam konteks pemrograman JavaScript, modularization merupakan teknik dalam memecah atau menggunakan kode dalam berkas JavaScript secara terpisah berdasarkan tanggung jawabnya masing-masing.',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2023-11-14T04:27:34.572Z',
     archived: false,
   },
   {
     id: 'todos-4',
     title: 'Lifecycle',
     body: 'Dalam konteks React component, lifecycle merupakan kumpulan method yang menjadi siklus hidup mulai dari component dibuat (constructor), dicetak (render), pasca-cetak (componentDidMount), dan sebagainya. ',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2023-12-14T04:27:34.572Z',
     archived: false,
   },
   {
     id: 'todos-5',
     title: 'ESM',
     body: 'ESM (ECMAScript Module) merupakan format modularisasi standar JavaScript.',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2021-12-14T04:27:34.572Z',
     archived: false,
   },
   {
     id: 'todos-6',
     title: 'Module Bundler',
     body: 'Dalam konteks pemrograman JavaScript, module bundler merupakan tools yang digunakan untuk menggabungkan seluruh modul JavaScript yang digunakan oleh aplikasi menjadi satu berkas.',
-    createdAt: '2022-04-14T04:27:34.572Z',
+    createdAt: '2023-12-14T04:27:34.572Z',
     archived: false,
   },
 ];
@@ -63,13 +63,16 @@ function getArchivedTodos() {
 }
 
 function addTodo({ title, body }) {
-  todos = [...todos, {
-    id: `todos-${+new Date()}`, 
-    title: title || '(untitled)', 
-    body, 
-    createdAt: new Date().toISOString(), 
-    archived: false,
-  }];
+  todos = [
+    ...todos,
+    {
+      id: `todos-${+new Date()}`,
+      title: title || '(untitled)',
+      body,
+      createdAt: new Date().toISOString(),
+      archived: false,
+    },
+  ];
 }
 
 function deleteTodo(id) {
@@ -96,7 +99,7 @@ function unarchiveTodo(id) {
 }
 
 function searchTodos(todos, keyword) {
-  return todos.filter(todo => todo.title.toLowerCase().includes(keyword.toLowerCase()))
+  return todos.filter((todo) => todo.title.toLowerCase().includes(keyword.toLowerCase()));
 }
 
 function editTodo({ id, title, body }) {
@@ -112,15 +115,4 @@ function editTodo({ id, title, body }) {
   });
 }
 
-export {
-  getAllTodos,
-  getActiveTodos,
-  getArchivedTodos,
-  deleteTodo,
-  editTodo,
-  getTodo,
-  archiveTodo,
-  unarchiveTodo,
-  searchTodos,
-  addTodo,
-};
+export { getAllTodos, getActiveTodos, getArchivedTodos, deleteTodo, editTodo, getTodo, archiveTodo, unarchiveTodo, searchTodos, addTodo };

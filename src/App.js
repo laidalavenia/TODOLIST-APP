@@ -6,10 +6,13 @@ import AddPage from './pages/AddPage';
 import DetailPage from './pages/DetailPage';
 
 import Page404 from './pages/Page404';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
   return (
-    <div className="app-container">
+    // <div className="app-container">
+    <Provider store={store}>
       <header>
         <Navigation />
       </header>
@@ -21,7 +24,7 @@ function App() {
           <Route path="/todos/:id" element={<DetailPage />} />
         </Routes>
       </main>
-    </div>
+    </Provider>
   );
 }
 

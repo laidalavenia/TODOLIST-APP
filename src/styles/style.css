@@ -28,17 +28,17 @@
   --surface: #121212;
   --error: #CF6679;
   --warning: #F39C12;
-  --on-background: #FFFFFF;
+  --on-background: #7a3939;
   --on-background-grey: #c7c7c7;
-  --on-surface: #FFFFFF;
+  /* --on-surface: #ae4242; */
 }
 
 [data-theme="light"] {
-  --background: #DDDDDD;
+  --background: #853c3c;
   --suface: #FFFFFF;
   --on-background: #333333;
   --on-background-grey: #6d6d6d;
-  --on-surface: #333333;
+  /* --on-surface: #333333; */
 }
 
 * {
